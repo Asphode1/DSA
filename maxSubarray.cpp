@@ -1,12 +1,15 @@
 #include <iostream>
+#include <iomanip>
 #include <cstdlib>
 #include <math.h>
 #include <time.h>
+#include <chrono>
 using namespace std;
+using sec = std::chrono::duration<double>;
 
 int randint(int start, int end)
 {
-  double rnd = static_cast <int> (floor(rand() * (start - end + 1)) + end);
+  double rnd = static_cast<int>(floor(rand() * 1.0 / RAND_MAX * (start - end + 1)) + end);
   return (int)rnd;
 }
 
@@ -66,19 +69,17 @@ int dynamic(int *arr)
 
 int main()
 {
-  const int l = 100;
+  const int l = 1000;
   int arr[l];
   for (int i = 0; i < l; i++)
   {
     arr[i] = randint(-1000, 1000);
   }
-  for (int i = 0; i < l; i++)
-    cout << arr[i] << endl;
-  clock_t start, end;
-  start = clock();
-  ios_base::sync_with_stdio(false);
-  cout << bruteForce(arr);
-  end = clock();
-  cout << double(end - start) / double(CLOCKS_PER_SEC);
+  /* for (int i = 0; i < l; i++)
+    cout << arr[i] << endl; */
+  auto start = chrono::system_clock::now();
+  bruteForce(arr);
+  const sec duration = chrono::system_clock::now() - start;
+  cout << fixed << duration.count() << setprecision(9);
   return 0;
 }
