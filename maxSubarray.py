@@ -1,9 +1,7 @@
 from random import randint
-
-
-arr = [randint(-1000, 1000) for i in range(10000)]
-
 from datetime import datetime
+
+arr = [randint(-1000, 1000) for i in range(1000)]
 
 def sumArr(a, i, j):
   sum = 0
@@ -65,8 +63,7 @@ def dynamic(a):
     smax = max(smax, ei)
   return smax
 
-def run(arr):
-  i = int(input(''))
+def run(arr, i):
   match i:
     case 1:
       now = datetime.now()
@@ -84,4 +81,4 @@ def run(arr):
       end = datetime.now()
       return format(end - now)
 
-print(run(arr))
+print(run(arr, 1))

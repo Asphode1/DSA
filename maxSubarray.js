@@ -1,8 +1,8 @@
 function randInt(start, end) {
-	return Math.floor(Math.random() * (end - start + 1))
+	return Math.floor(Math.random() * (end - start + 1) + end)
 }
 
-var arr = Array(10000000).fill(randInt(-1000, 1000))
+var arr = Array(1000).fill(randInt(-1000, 1000))
 var a = [4, -2, 3, -1, -5]
 
 function bruteForce(arr) {
@@ -37,18 +37,20 @@ function dynamic(arr) {
 	}
 	return s
 }
-/* 
+// bruteforce algorithm
 var st = performance.now()
 bruteForce(arr)
 var ed = performance.now()
 console.log(ed - st)
- */
-/* st = performance.now()
+
+/* //modified bruteforce algoritm
+st = performance.now()
 betterBruteForce(arr)
 ed = performance.now()
 console.log(ed - st)
- */
+
+// dynamic algorithm
 st = performance.now()
 dynamic(arr)
 ed = performance.now()
-console.log(ed - st)
+console.log(ed - st) */
