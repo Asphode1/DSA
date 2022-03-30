@@ -1,7 +1,7 @@
 from random import randint
 from datetime import datetime
 
-arr = [randint(-1000, 1000) for i in range(1000)]
+arr = [randint(-1000, 1000) for i in range(10000000)]
 
 def sumArr(a, i, j):
   sum = 0
@@ -81,4 +81,4 @@ def run(arr, i):
       end = datetime.now()
       return format(end - now)
 
-print(run(arr, 1))
+print(run(arr, 3))
