@@ -43,7 +43,7 @@ bruteForce(arr)
 var ed = performance.now()
 console.log(ed - st)
 
-/* //modified bruteforce algoritm
+//modified bruteforce algoritm
 st = performance.now()
 betterBruteForce(arr)
 ed = performance.now()
@@ -53,4 +53,4 @@ console.log(ed - st)
 st = performance.now()
 dynamic(arr)
 ed = performance.now()
-console.log(ed - st) */
+console.log(ed - st)
