@@ -5,7 +5,6 @@
 #include <time.h>
 #include <chrono>
 using namespace std;
-using sec = std::chrono::duration<double>;
 
 int randint(int start, int end)
 {
@@ -77,9 +76,11 @@ int main()
   }
   /* for (int i = 0; i < l; i++)
     cout << arr[i] << endl; */
-  auto start = chrono::system_clock::now();
-  bruteForce(arr);
-  const sec duration = chrono::system_clock::now() - start;
-  cout << fixed << duration.count() << setprecision(9);
+  auto start = chrono::high_resolution_clock::now();
+  ios_base::sync_with_stdio(false);
+  int a = bruteForce(arr);
+  auto end = chrono::high_resolution_clock::now();
+  cout << a << endl;
+  cout << fixed << chrono::duration_cast<chrono::nanoseconds>(end - start).count() << setprecision(9);
   return 0;
 }
