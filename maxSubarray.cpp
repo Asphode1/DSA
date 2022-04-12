@@ -68,7 +68,8 @@ int dynamic(int *arr)
 
 int main()
 {
-  const int l = 1000;
+  srand(time(0));
+  const int l = 10000;
   int arr[l];
   for (int i = 0; i < l; i++)
   {
@@ -76,11 +77,11 @@ int main()
   }
   /* for (int i = 0; i < l; i++)
     cout << arr[i] << endl; */
-  auto start = chrono::high_resolution_clock::now();
-  ios_base::sync_with_stdio(false);
+  clock_t start, end;
+  start = clock();
   int a = bruteForce(arr);
-  auto end = chrono::high_resolution_clock::now();
+  end = clock();
   cout << a << endl;
-  cout << fixed << chrono::duration_cast<chrono::nanoseconds>(end - start).count() << setprecision(9);
+  cout << fixed << (double)(end - start) / CLOCKS_PER_SEC << setprecision(9);
   return 0;
 }
