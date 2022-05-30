@@ -34,9 +34,8 @@ node merge(node l1, node l2)
 {
   node cur1 = l1;
   node cur2 = l2;
-  node l;
-  node cur = l;
-  node tmp = cur;
+  node cur;
+  node l = cur;
   while (cur1->next != NULL || cur2->next != NULL)
   {
     if (cur1->dat > cur2->dat)
@@ -49,7 +48,7 @@ node merge(node l1, node l2)
       cur->dat = cur2->dat;
       cur2 = cur2->next;
     }
-    cur = cur->next;
+    cur->next = cur;
   }
   return l;
 }
