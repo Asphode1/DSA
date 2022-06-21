@@ -1,3 +1,10 @@
+""" 
+Mai Trung Kiên
+20200301
+https://github.com/Asphode1/DSA/tree/master/sort/sort.py
+"""
+
+
 from math import floor
 
 
